@@ -13,6 +13,8 @@
     "#define sorta(v) sort(v.begin(),v.end())",
     "#define mem(a,b) memset(a,b,sizeof(a));",
     "#define GetBit(u) u & - u;",
+    "#define bit(u,i) ((u >> i) & 1)",
+    "#define mask(i) (1ll << i)",
     "",
     "const ll cs = 2e5 + 7;",
     "const ll mod = 1e9 + 7;",
@@ -25,6 +27,7 @@
     "    ios_base::sync_with_stdio(false);",
     "    cin.tie(NULL);",
     "    cout.tie(NULL);",
+    "",
     "    return 0;",
     "}"
   ],
