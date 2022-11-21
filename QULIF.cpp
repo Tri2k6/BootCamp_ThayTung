@@ -23,6 +23,7 @@ int n;
 int a[cs];
 ll Prefix[cs];
 ll sum = 0;
+deque<int> dq;
 
 int main() {
     ios_base::sync_with_stdio(false);
@@ -33,16 +34,20 @@ int main() {
         input >> a[i];
         Prefix[i] = Prefix[i - 1] + a[i];
     }
-    sum = Prefix[n] + 1;
-    sum >>= 1;
+    sum = (Prefix[n] + 1) >> 1;
     int l = 1;
     ll res = LLONG_MAX;
     for (ll i = 1;i<=n;i++) {
-        while (l <= i + 1 && Prefix[i] - Prefix[l - 1] >= sum) {
+        while (dq.size() && a[dq.back()] >= a[i]) {
+            dq.pop_back();
+        }
+        dq.push_back(i);
+        while (l <= i + 1 && Prefix[i] - Prefix[l - 1] - a[dq.front()]>= sum) {
             res = min(res,i - l + 1);
             l++;
+            while (dq.size() && dq.front() < l) dq.pop_front();
         }
     }
-    output << res;
+    output << res - 1;
     return 0;
 }
