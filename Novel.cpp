@@ -59,8 +59,9 @@ inline istream& operator>>(istream& is, ulll &x) { return  read(is,x); }
 inline ostream& operator<<(ostream& os,  lll  x) { return write(os,x); }
 inline ostream& operator<<(ostream& os, ulll  x) { return write(os,x); }
 
-#define input cin
-#define output cout
+ifstream input("input.txt");
+ofstream output("output.txt");
+
 #define ll long long 
 #define pii pair<ll,ll>
 #define endl '\n'
