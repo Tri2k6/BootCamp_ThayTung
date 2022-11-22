@@ -1,8 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define input cin
-#define output cout
+ifstream input("input.txt");
+ofstream output("output.txt");
+
 #define ll long long 
 #define pii pair<ll,ll>
 #define endl '\n'
